@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelloWorldDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HelloWorldDbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="webpages_Membership" EntityType="HelloWorldDbModel.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="HelloWorldDbModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="HelloWorldDbModel.webpages_Roles" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="HelloWorldDbModel.webpages_UsersInRoles" />
+    <AssociationSet Name="fk_RoleId" Association="HelloWorldDbModel.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="HelloWorldDbModel.C__MigrationHistory" />
+    <EntitySet Name="Books" EntityType="HelloWorldDbModel.Books" />
+    <EntitySet Name="Chapters" EntityType="HelloWorldDbModel.Chapters" />
+    <EntitySet Name="Tags" EntityType="HelloWorldDbModel.Tags" />
+    <EntitySet Name="UserProfile" EntityType="HelloWorldDbModel.UserProfile" />
+    <EntitySet Name="Votes" EntityType="HelloWorldDbModel.Votes" />
+    <AssociationSet Name="FK_dbo_Books_dbo_UserProfile_UserId" Association="HelloWorldDbModel.FK_dbo_Books_dbo_UserProfile_UserId">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Chapters_dbo_Books_BookId" Association="HelloWorldDbModel.FK_dbo_Chapters_dbo_Books_BookId">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Chapters" EntitySet="Chapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Votes_dbo_Chapters_ChapterId" Association="HelloWorldDbModel.FK_dbo_Votes_dbo_Chapters_ChapterId">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Votes" EntitySet="Votes" />
+    </AssociationSet>
+    <AssociationSet Name="TagChapters" Association="HelloWorldDbModel.TagChapters">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Tags" EntitySet="Tags" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="webpages_UsersInRoles" Relationship="HelloWorldDbModel.fk_RoleId" FromRole="webpages_Roles" ToRole="webpages_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="webpages_Roles" Relationship="HelloWorldDbModel.fk_RoleId" FromRole="webpages_UsersInRoles" ToRole="webpages_Roles" />
+  </EntityType>
+  <Association Name="fk_RoleId">
+    <End Role="webpages_Roles" Type="HelloWorldDbModel.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="HelloWorldDbModel.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Type="String" Name="MigrationId" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="Model" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="ProductVersion" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Type="Int32" Name="BookId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="BookName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <NavigationProperty Name="UserProfile" Relationship="HelloWorldDbModel.FK_dbo_Books_dbo_UserProfile_UserId" FromRole="Books" ToRole="UserProfile" />
+    <NavigationProperty Name="Chapters" Relationship="HelloWorldDbModel.FK_dbo_Chapters_dbo_Books_BookId" FromRole="Books" ToRole="Chapters" />
+  </EntityType>
+  <EntityType Name="Chapters">
+    <Key>
+      <PropertyRef Name="ChapterId" />
+    </Key>
+    <Property Type="Int32" Name="ChapterId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ChapterName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ChapterContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BookId" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="HelloWorldDbModel.FK_dbo_Chapters_dbo_Books_BookId" FromRole="Chapters" ToRole="Books" />
+    <NavigationProperty Name="Votes" Relationship="HelloWorldDbModel.FK_dbo_Votes_dbo_Chapters_ChapterId" FromRole="Chapters" ToRole="Votes" />
+    <NavigationProperty Name="Tags" Relationship="HelloWorldDbModel.TagChapters" FromRole="Chapters" ToRole="Tags" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Type="Int32" Name="TagId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TagContent" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chapters" Relationship="HelloWorldDbModel.TagChapters" FromRole="Tags" ToRole="Chapters" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="HelloWorldDbModel.FK_dbo_Books_dbo_UserProfile_UserId" FromRole="UserProfile" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="Votes">
+    <Key>
+      <PropertyRef Name="VoteId" />
+    </Key>
+    <Property Type="Int32" Name="VoteId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Byte" Name="Like" Nullable="false" />
+    <Property Type="Byte" Name="Dislike" Nullable="false" />
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="String" Name="UserName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chapters" Relationship="HelloWorldDbModel.FK_dbo_Votes_dbo_Chapters_ChapterId" FromRole="Votes" ToRole="Chapters" />
+  </EntityType>
+  <Association Name="FK_dbo_Books_dbo_UserProfile_UserId">
+    <End Type="HelloWorldDbModel.UserProfile" Role="UserProfile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="HelloWorldDbModel.Books" Role="Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Chapters_dbo_Books_BookId">
+    <End Type="HelloWorldDbModel.Books" Role="Books" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="HelloWorldDbModel.Chapters" Role="Chapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="Chapters">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Votes_dbo_Chapters_ChapterId">
+    <End Type="HelloWorldDbModel.Chapters" Role="Chapters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="HelloWorldDbModel.Votes" Role="Votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="ChapterId" />
+      </Principal>
+      <Dependent Role="Votes">
+        <PropertyRef Name="ChapterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TagChapters">
+    <End Type="HelloWorldDbModel.Chapters" Role="Chapters" Multiplicity="*" />
+    <End Type="HelloWorldDbModel.Tags" Role="Tags" Multiplicity="*" />
+  </Association>
+</Schema>

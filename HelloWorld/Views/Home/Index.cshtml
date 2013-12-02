@@ -1,0 +1,56 @@
+﻿@*@model IEnumerable<Dominion.Picture>*@
+@model IEnumerable<HelloWorld.Models.UserProfile>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.UserName</h4>
+        <div>@item.Email, @item.UserId</div>
+        <hr />
+        </div>
+}
+
+@*<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel-example-captions" data-slide-to="0"></li>
+        <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
+        @for (int i = 2; i < Model.Count() && i < 5; i++)
+        {
+            <li class="" data-target="#carousel-example-captions" data-slide-to="@i"></li>
+        }
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Images/@Model.First().PictureName" data-src="holder.js/900x500/auto/#666:#666" alt="900x500">
+            <div class="carousel-caption">
+              <h3>@Model.First().PictureContent</h3>
+            </div>
+        </div>
+        @foreach (var item in Model.Take(5).ToList())
+        {
+
+            if (item != Model.First())
+            {
+                
+            <div class="item">
+                <img src="~/Images/@item.PictureName" data-src="holder.js/900x500/auto/#777:#777" alt="900x500">
+                <div class="carousel-caption">
+                  <h3>@item.PictureContent</h3>
+                </div>
+            </div>
+            }
+
+        }
+    </div>
+    <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>*@
+

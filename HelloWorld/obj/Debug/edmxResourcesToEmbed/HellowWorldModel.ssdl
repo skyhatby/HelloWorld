@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище HelloWorldDbModel" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Хранилище HelloWorldDbModelContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Хранилище HelloWorldDbModel.__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Books" EntityType="Хранилище HelloWorldDbModel.Books" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Chapters" EntityType="Хранилище HelloWorldDbModel.Chapters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagChapters" EntityType="Хранилище HelloWorldDbModel.TagChapters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="Хранилище HelloWorldDbModel.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserProfile" EntityType="Хранилище HelloWorldDbModel.UserProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Votes" EntityType="Хранилище HelloWorldDbModel.Votes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_Membership" EntityType="Хранилище HelloWorldDbModel.webpages_Membership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Хранилище HelloWorldDbModel.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_Roles" EntityType="Хранилище HelloWorldDbModel.webpages_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="Хранилище HelloWorldDbModel.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_Books_dbo_UserProfile_UserId" Association="Хранилище HelloWorldDbModel.FK_dbo_Books_dbo_UserProfile_UserId">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Chapters_dbo_Books_BookId" Association="Хранилище HelloWorldDbModel.FK_dbo_Chapters_dbo_Books_BookId">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Chapters" EntitySet="Chapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TagChapters_dbo_Chapters_Chapter_ChapterId" Association="Хранилище HelloWorldDbModel.FK_dbo_TagChapters_dbo_Chapters_Chapter_ChapterId">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="TagChapters" EntitySet="TagChapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TagChapters_dbo_Tags_Tag_TagId" Association="Хранилище HelloWorldDbModel.FK_dbo_TagChapters_dbo_Tags_Tag_TagId">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="TagChapters" EntitySet="TagChapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Votes_dbo_Chapters_ChapterId" Association="Хранилище HelloWorldDbModel.FK_dbo_Votes_dbo_Chapters_ChapterId">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Votes" EntitySet="Votes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RoleId" Association="Хранилище HelloWorldDbModel.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UserId" Association="Хранилище HelloWorldDbModel.fk_UserId">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BookName" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chapters">
+    <Key>
+      <PropertyRef Name="ChapterId" />
+    </Key>
+    <Property Name="ChapterId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ChapterName" Type="nvarchar(max)" />
+    <Property Name="ChapterContent" Type="nvarchar(max)" />
+    <Property Name="BookId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagChapters">
+    <Key>
+      <PropertyRef Name="Tag_TagId" />
+      <PropertyRef Name="Chapter_ChapterId" />
+    </Key>
+    <Property Name="Tag_TagId" Type="int" Nullable="false" />
+    <Property Name="Chapter_ChapterId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Name="TagId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TagContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Votes">
+    <Key>
+      <PropertyRef Name="VoteId" />
+    </Key>
+    <Property Name="VoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Like" Type="tinyint" Nullable="false" />
+    <Property Name="Dislike" Type="tinyint" Nullable="false" />
+    <Property Name="ChapterId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsConfirmed" Type="bit" />
+    <Property Name="LastPasswordFailureDate" Type="datetime" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordChangedDate" Type="datetime" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Books_dbo_UserProfile_UserId">
+    <End Role="UserProfile" Type="Хранилище HelloWorldDbModel.UserProfile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Books" Type="Хранилище HelloWorldDbModel.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Chapters_dbo_Books_BookId">
+    <End Role="Books" Type="Хранилище HelloWorldDbModel.Books" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Chapters" Type="Хранилище HelloWorldDbModel.Chapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="Chapters">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TagChapters_dbo_Chapters_Chapter_ChapterId">
+    <End Role="Chapters" Type="Хранилище HelloWorldDbModel.Chapters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TagChapters" Type="Хранилище HelloWorldDbModel.TagChapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="ChapterId" />
+      </Principal>
+      <Dependent Role="TagChapters">
+        <PropertyRef Name="Chapter_ChapterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TagChapters_dbo_Tags_Tag_TagId">
+    <End Role="Tags" Type="Хранилище HelloWorldDbModel.Tags" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TagChapters" Type="Хранилище HelloWorldDbModel.TagChapters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="TagId" />
+      </Principal>
+      <Dependent Role="TagChapters">
+        <PropertyRef Name="Tag_TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Votes_dbo_Chapters_ChapterId">
+    <End Role="Chapters" Type="Хранилище HelloWorldDbModel.Chapters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Votes" Type="Хранилище HelloWorldDbModel.Votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="ChapterId" />
+      </Principal>
+      <Dependent Role="Votes">
+        <PropertyRef Name="ChapterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RoleId">
+    <End Role="webpages_Roles" Type="Хранилище HelloWorldDbModel.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Хранилище HelloWorldDbModel.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UserId">
+    <End Role="UserProfile" Type="Хранилище HelloWorldDbModel.UserProfile" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Хранилище HelloWorldDbModel.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
