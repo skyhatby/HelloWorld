@@ -100,7 +100,10 @@ F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.dll
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Migrations.InitialCreate.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csproj.GenerateResource.Cache
-F:\Прога\HelloWorld\HelloWorld\bin\Postal.dll
 F:\Прога\HelloWorld\HelloWorld\bin\RazorEngine.dll
 F:\Прога\HelloWorld\HelloWorld\bin\RazorEngine.pdb
 F:\Прога\HelloWorld\HelloWorld\bin\RazorEngine.xml
+F:\Прога\HelloWorld\HelloWorld\bin\en\HelloWorld.resources.dll
+F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.resources
+F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.en.resources
+F:\Прога\HelloWorld\HelloWorld\obj\Debug\en\HelloWorld.resources.dll

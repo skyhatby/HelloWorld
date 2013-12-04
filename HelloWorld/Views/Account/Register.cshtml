@@ -1,40 +1,43 @@
 ﻿@model HelloWorld.Models.RegisterModel
 @{
-    ViewBag.Title = "Регистрация";
+    ViewBag.Title = Resources.Resource.Registration;
 }
-
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Создание новой учетной записи.</h2>
-</hgroup>
-
+<legend>@Resources.Resource.Registration</legend>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
-
-    <fieldset>
-        <legend>Форма регистрации</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email)
-            </li>
-        </ol>
-        <input type="submit" value="Регистрация" />
-    </fieldset>
+    
+                    <div class="form-group">
+                         <p class="col-lg-3 control-label">  @Resources.Resource.Name</p>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = @Resources.Resource.Name })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <p class="col-lg-3 control-label">  @Resources.Resource.PassLetter</p>
+                        <div class="col-lg-8">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = @Resources.Resource.PassLetter })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                          <p class="col-lg-3 control-label">  @Resources.Resource.ConfirmPassword</p>
+                        <div class="col-lg-8">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = @Resources.Resource.ConfirmPassword })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-lg-3 control-label" })
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-6">
+                            <input type="submit" class="btn btn-success" value="@Resources.Resource.Registration" />
+                        </div>
+                    </div>
+ 
 }
 
 @section Scripts {

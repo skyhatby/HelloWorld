@@ -5,6 +5,7 @@ using System.Transactions;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
+using HelloWorld.Filters;
 using HelloWorld.Service;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
@@ -14,7 +15,7 @@ using IsolationLevel = System.Transactions.IsolationLevel;
 namespace HelloWorld.Controllers
 {
     [Authorize]
-
+    [Culture]
     public class AccountController : Controller
     {
 
@@ -86,13 +87,13 @@ namespace HelloWorld.Controllers
                     // int host = System.Web.HttpContext.Current.Request.Url.Port;
                     // String host = uri.Scheme + Uri.SchemeDelimiter + uri.Host + ":" + uri.Port;
 
-                    string body = "<h4>Your login: "
+                    string body = "<h4>"+Resources.Resource.LoginLetter
                      + model.UserName
-                     + "\n<div>Your password: "
+                     + "\n"+Resources.Resource.PassLetter
                      + model.Password
-                     + ".</div> <div>To activate your account please click on the link:"
+                     + ".</div> <div>"+Resources.Resource.ActivLetter
                      + "<a href=\"" + uri
-                     + "\">Press here</a>"
+                     + "\">"+Resources.Resource.PressLetter+"</a>"
                      + "<div></h4>";
                     new Email(model.Email, "Registration process", body);
 
