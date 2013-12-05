@@ -177,4 +177,22 @@
   <data name="User" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="Activ" xml:space="preserve">
+    <value>Activate your account</value>
+  </data>
+  <data name="ActivBody" xml:space="preserve">
+    <value>Check your email for new letters. We sent you a link to confirm your registration.</value>
+  </data>
+  <data name="ConfirmFailed" xml:space="preserve">
+    <value>Confirmation Failed</value>
+  </data>
+  <data name="ConfirmFailedMessage" xml:space="preserve">
+    <value>Account activation isn't finished. Please, check your email.</value>
+  </data>
+  <data name="ConfirmSuccess" xml:space="preserve">
+    <value>Confirmation Success</value>
+  </data>
+  <data name="ConfirmSuccessMessage" xml:space="preserve">
+    <value>You have activated your account. Go and check our site </value>
+  </data>
 </root>

@@ -177,4 +177,22 @@
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
   </data>
+  <data name="Activ" xml:space="preserve">
+    <value>Активируйте ваш аккаунт</value>
+  </data>
+  <data name="ActivBody" xml:space="preserve">
+    <value>Проверьте вашу почту. Мы отослали вам на ящик письмо со ссылкой для активации аккаунта.</value>
+  </data>
+  <data name="ConfirmFailed" xml:space="preserve">
+    <value>Провал активации</value>
+  </data>
+  <data name="ConfirmFailedMessage" xml:space="preserve">
+    <value>Активация аккаунта не закончена. Проверьте пожалуйста почту.</value>
+  </data>
+  <data name="ConfirmSuccess" xml:space="preserve">
+    <value>Активация успешна</value>
+  </data>
+  <data name="ConfirmSuccessMessage" xml:space="preserve">
+    <value>Вы успешно активировали аккаунт. Добро пожаловать на наш сайт </value>
+  </data>
 </root>

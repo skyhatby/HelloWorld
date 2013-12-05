@@ -87,13 +87,13 @@ namespace HelloWorld.Controllers
                     // int host = System.Web.HttpContext.Current.Request.Url.Port;
                     // String host = uri.Scheme + Uri.SchemeDelimiter + uri.Host + ":" + uri.Port;
 
-                    string body = "<h4>"+Resources.Resource.LoginLetter
+                    string body = "<h4>" + Resources.Resource.LoginLetter
                      + model.UserName
-                     + "\n"+Resources.Resource.PassLetter
+                     + "\n" + Resources.Resource.PassLetter
                      + model.Password
-                     + ".</div> <div>"+Resources.Resource.ActivLetter
+                     + ".</div> <div>" + Resources.Resource.ActivLetter
                      + "<a href=\"" + uri
-                     + "\">"+Resources.Resource.PressLetter+"</a>"
+                     + "\">" + Resources.Resource.PressLetter + "</a>"
                      + "<div></h4>";
                     new Email(model.Email, "Registration process", body);
 

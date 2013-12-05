@@ -79,6 +79,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Активируйте ваш аккаунт.
+        /// </summary>
+        public static string Activ {
+            get {
+                return ResourceManager.GetString("Activ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверьте вашу почту. Мы отослали вам на ящик письмо со ссылкой для активации аккаунта..
+        /// </summary>
+        public static string ActivBody {
+            get {
+                return ResourceManager.GetString("ActivBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Для активации аккаунта нажмите на ссылку: .
         /// </summary>
         public static string ActivLetter {
@@ -97,11 +115,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Провал активации.
+        /// </summary>
+        public static string ConfirmFailed {
+            get {
+                return ResourceManager.GetString("ConfirmFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Активация аккаунта не закончена. Проверьте пожалуйста почту..
+        /// </summary>
+        public static string ConfirmFailedMessage {
+            get {
+                return ResourceManager.GetString("ConfirmFailedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подтвердите ваш пароль: .
         /// </summary>
         public static string ConfirmPassword {
             get {
                 return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Активация успешна.
+        /// </summary>
+        public static string ConfirmSuccess {
+            get {
+                return ResourceManager.GetString("ConfirmSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы успешно активировали аккаунт. Добро пожаловать на наш сайт .
+        /// </summary>
+        public static string ConfirmSuccessMessage {
+            get {
+                return ResourceManager.GetString("ConfirmSuccessMessage", resourceCulture);
             }
         }
         
