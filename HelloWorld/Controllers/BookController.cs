@@ -5,10 +5,14 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using HelloWorld.Filters;
 using HelloWorld.Models;
 
 namespace HelloWorld.Controllers
 {
+    [Culture]
+    [Authorize]
     public class BookController : Controller
     {
         private HelloWorldDb db = new HelloWorldDb();
@@ -18,14 +22,13 @@ namespace HelloWorld.Controllers
 
         public ActionResult Index()
         {
-            //var books = db.Books.Include(b => b.UserProfile);
             var books = db.Books.Where(d => d.UserProfile.UserName == User.Identity.Name);
             return View(books.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult IndexAll()
         {
-            //var books = db.Books.Include(b => b.UserProfile);
             var books = db.Books.Include(m => m.UserProfile);
             return View(books.ToList());
         }
