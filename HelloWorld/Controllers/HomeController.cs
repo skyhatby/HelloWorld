@@ -11,19 +11,19 @@ namespace HelloWorld.Controllers
     [Culture]
     public class HomeController : Controller
     {
-        HelloWorldDb _db = new HelloWorldDb();
+        HelloWorldDb db = new HelloWorldDb();
 
         public ActionResult Index()
         {
-            var model = _db.UserProfiles.ToList();
+            var model = db.UserProfiles.ToList();
             return View(model);
         }
 
         public ActionResult ChangeCulture(string lang)
         {
-            string returnUrl = Request.UrlReferrer.AbsolutePath;
+            var returnUrl = Request.UrlReferrer.AbsolutePath;
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en" };
+            var cultures = new List<string> { "ru", "en" };
             if (!cultures.Contains(lang))
             {
                 lang = "ru";
@@ -59,9 +59,9 @@ namespace HelloWorld.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (_db != null)
+            if (db != null)
             {
-                _db.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
         }

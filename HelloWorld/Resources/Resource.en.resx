@@ -195,4 +195,10 @@
   <data name="ConfirmSuccessMessage" xml:space="preserve">
     <value>You have activated your account. Go and check our site </value>
   </data>
+  <data name="Library" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="UserBooks" xml:space="preserve">
+    <value>Your Books</value>
+  </data>
 </root>

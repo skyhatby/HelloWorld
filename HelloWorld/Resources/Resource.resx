@@ -195,4 +195,10 @@
   <data name="ConfirmSuccessMessage" xml:space="preserve">
     <value>Вы успешно активировали аккаунт. Добро пожаловать на наш сайт </value>
   </data>
+  <data name="Library" xml:space="preserve">
+    <value>Библиотека</value>
+  </data>
+  <data name="UserBooks" xml:space="preserve">
+    <value>Ваши книги</value>
+  </data>
 </root>

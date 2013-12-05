@@ -214,6 +214,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Библиотека.
+        /// </summary>
+        public static string Library {
+            get {
+                return ResourceManager.GetString("Library", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Войти.
         /// </summary>
         public static string LogIn {
@@ -291,6 +300,15 @@ namespace Resources {
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ваши книги.
+        /// </summary>
+        public static string UserBooks {
+            get {
+                return ResourceManager.GetString("UserBooks", resourceCulture);
             }
         }
     }
