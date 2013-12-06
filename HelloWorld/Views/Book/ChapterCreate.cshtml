@@ -28,23 +28,15 @@
             @Html.EditorFor(model => model.ChapterContent)
             @Html.ValidationMessageFor(model => model.ChapterContent)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BookId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BookId)
-            @Html.ValidationMessageFor(model => model.BookId)
-        </div>
-
         <p>
-            <input type="submit" value="Create" />
+            <input type="hidden" value=" @(new{id = @ViewBag.BookId})" />
+            <input type="submit" class="btn btn-success" value="Create" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Chapters", new {id = ViewBag.BookId})
 </div>
 
 @section Scripts {

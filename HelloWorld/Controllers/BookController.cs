@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.UI.WebControls;
 using HelloWorld.Filters;
 using HelloWorld.Models;
@@ -38,7 +39,103 @@ namespace HelloWorld.Controllers
 
         public ActionResult Chapters(int id)
         {
+            ViewBag.BookId = id;
             return View(db.Chapters.Where(r => r.BookId==id).ToList());
+        }
+
+        //
+        // GET: /Chapter/Create
+
+        public ActionResult ChapterCreate(int id)
+        {
+            ViewBag.BookId = id;
+            return View();
+        }
+
+        //
+        // POST: /Chapter/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChapterCreate(Chapter chapter,int id)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Chapters.Add(chapter);
+                chapter.BookId = id;
+                db.SaveChanges();
+                return RedirectToAction("Chapters",new {id});
+            }
+
+            return View(chapter);
+        }
+
+        //
+        // GET: /Chapter/Edit/5
+
+        public ActionResult ChapterEdit(int id)
+        {
+            Chapter chapter = db.Chapters.Find(id);
+            if (chapter == null)
+            {
+                return HttpNotFound();
+            }
+            return View(chapter);
+        }
+
+        //
+        // POST: /Chapter/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChapterEdit(Chapter chapter)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(chapter).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Chapters",new {id = chapter.BookId});
+            }
+            return View(chapter);
+        }
+
+        //
+        // GET: /Chapter/Delete/5
+
+        public ActionResult ChapterDelete(int id)
+        {
+            Chapter chapter = db.Chapters.Find(id);
+            if (chapter == null)
+            {
+                return HttpNotFound();
+            }
+            return View(chapter);
+        }
+
+        //
+        // POST: /Chapter/Delete/5
+
+        [HttpPost, ActionName("ChapterDelete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChapterDeleteConfirmed(int id)
+        {
+            Chapter chapter = db.Chapters.Find(id);
+            db.Chapters.Remove(chapter);
+            db.SaveChanges();
+            return RedirectToAction("Chapters",new {id = chapter.BookId});
+        }
+
+        //
+        // GET: /Chapter/Details/5
+
+        public ActionResult ChapterDetails(int id)
+        {
+            Chapter chapter = db.Chapters.Find(id);
+            if (chapter == null)
+            {
+                return HttpNotFound();
+            }
+            return View(chapter);
         }
 
         //
