@@ -107,3 +107,5 @@ F:\Прога\HelloWorld\HelloWorld\bin\en\HelloWorld.resources.dll
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.en.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\en\HelloWorld.resources.dll
+F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.dll
+F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.pdb
