@@ -193,8 +193,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MarkdownDeepController.cs" />
-    <Compile Include="Controllers\MarkdownDeepExtensions.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,7 +228,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MarkdownDeep.css" />
-    <Content Include="Content\MarkdownDeep_ToptenLogo.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -370,8 +367,7 @@
     <Content Include="Views\Book\ChapterEdit.cshtml" />
     <Content Include="Views\Book\ChapterDelete.cshtml" />
     <Content Include="Views\Book\Chapters.cshtml" />
-    <Content Include="Views\MarkdownDeep\Edit.cshtml" />
-    <Content Include="Views\MarkdownDeep\Index.cshtml" />
+    <Content Include="Views\Book\ChapterTextEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

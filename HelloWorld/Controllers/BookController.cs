@@ -99,6 +99,27 @@ namespace HelloWorld.Controllers
             return View(chapter);
         }
 
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult ChapterTextEdit(int id)
+        {
+            Chapter chapter = db.Chapters.Find(id);
+            // For editing the content, just pass the raw Markdown to the view
+            ViewData["content"] = chapter.ChapterContent;
+            ViewBag.ChapterId = id;
+            return View();
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult ChapterTextEdit(string content,int id)
+        {
+            // Save the content and switch back to the main view
+            Chapter chapter = db.Chapters.Find(id);
+            chapter.ChapterContent = content;
+            db.SaveChanges();
+            return RedirectToAction("ChapterDetails",new {id});
+        }
+
+
         //
         // GET: /Chapter/Delete/5
 
@@ -135,6 +156,11 @@ namespace HelloWorld.Controllers
             {
                 return HttpNotFound();
             }
+            var md = new MarkdownDeep.Markdown();
+            md.SafeMode = true;
+            md.ExtraMode = true;
+
+            ViewData["Content"] = md.Transform(chapter.ChapterContent);
             return View(chapter);
         }
 

@@ -26,7 +26,9 @@
     @(Html.TextArea("content", new { @class = "mdd_editor" }))
     <div class="mdd_resizer"></div>
     <p>
-        <input type="submit" value="Save" /></p>
+        <input type="hidden" value=" @(new{id = @ViewBag.ChapterId})" />
+        <input type="submit" value="Save" />
+    </p>
 
 
 }

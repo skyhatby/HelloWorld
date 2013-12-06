@@ -20,14 +20,6 @@
             @Html.EditorFor(model => model.ChapterName)
             @Html.ValidationMessageFor(model => model.ChapterName)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ChapterContent)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ChapterContent)
-            @Html.ValidationMessageFor(model => model.ChapterContent)
-        </div>
         <p>
             <input type="hidden" value=" @(new{id = @ViewBag.BookId})" />
             <input type="submit" class="btn btn-success" value="Create" />

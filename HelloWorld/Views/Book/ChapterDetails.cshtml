@@ -19,18 +19,10 @@
     <div class="display-label">
          @Html.DisplayNameFor(model => model.ChapterContent)
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ChapterContent)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.BookId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.BookId)
-    </div>
+    @(Html.Raw(ViewData["Content"]))
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "ChapterEdit", new { id=Model.ChapterId }) |
+    @Html.ActionLink("Edit Text", "ChapterTextEdit", new { id=Model.ChapterId }) |
     @Html.ActionLink("Back to List", "Chapters", new { id = Model.BookId})
 </p>
