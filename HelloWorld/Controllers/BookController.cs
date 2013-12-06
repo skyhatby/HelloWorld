@@ -26,7 +26,7 @@ namespace HelloWorld.Controllers
             return View(books.ToList());
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult IndexAll()
         {
             var books = db.Books.Include(m => m.UserProfile);
@@ -36,14 +36,9 @@ namespace HelloWorld.Controllers
         //
         // GET: /Book/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Chapters(int id)
         {
-            Book book = db.Books.Find(id);
-            if (book == null)
-            {
-                return HttpNotFound();
-            }
-            return View(book);
+            return View(db.Chapters.Where(r => r.BookId==id).ToList());
         }
 
         //

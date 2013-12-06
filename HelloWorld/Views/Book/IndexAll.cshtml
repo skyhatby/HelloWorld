@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@Resources.Resource.CreateBook, "Create")
 </p>
 <table>
     <tr>
@@ -31,10 +31,10 @@
         <td>
             @if (item.UserProfile.UserName == User.Identity.Name)
             {
-                @Html.ActionLink("Edit", "Edit", new {id = item.BookId}) 
-                @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+                @Html.ActionLink(@Resources.Resource.Edit, "Edit", new { id=item.BookId }) 
+                @Html.ActionLink(@Resources.Resource.Delete, "Delete", new { id=item.BookId })
             }
-            @Html.ActionLink("Details", "Details", new { id=item.BookId }) 
+            @Html.ActionLink(@Resources.Resource.Chapters, "Chapters", new { id=item.BookId }) 
         </td>
     </tr>
 }

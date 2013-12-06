@@ -189,6 +189,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\ChapterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -345,11 +346,16 @@
     <Content Include="Views\Account\ConfirmationSuccess.cshtml" />
     <Content Include="Views\Account\RegisterStepTwo.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
-    <Content Include="Views\Book\Details.cshtml" />
     <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\Delete.cshtml" />
     <Content Include="Views\Book\IndexAll.cshtml" />
+    <Content Include="Views\Chapter\Index.cshtml" />
+    <Content Include="Views\Chapter\Details.cshtml" />
+    <Content Include="Views\Chapter\Create.cshtml" />
+    <Content Include="Views\Chapter\Edit.cshtml" />
+    <Content Include="Views\Chapter\Delete.cshtml" />
+    <Content Include="Views\Book\Chapters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

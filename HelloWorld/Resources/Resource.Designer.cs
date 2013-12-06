@@ -106,6 +106,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить новую главу.
+        /// </summary>
+        public static string AddChapter {
+            get {
+                return ResourceManager.GetString("AddChapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вернуться.
+        /// </summary>
+        public static string BackToList {
+            get {
+                return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Название книги:.
+        /// </summary>
+        public static string BookName {
+            get {
+                return ResourceManager.GetString("BookName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Главы.
+        /// </summary>
+        public static string Chapters {
+            get {
+                return ResourceManager.GetString("Chapters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выберите язык .
         /// </summary>
         public static string ChooseLang {
@@ -187,11 +223,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать новую книгу.
+        /// </summary>
+        public static string CreateBook {
+            get {
+                return ResourceManager.GetString("CreateBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Добавить нового пользователя.
         /// </summary>
         public static string CreateLink {
             get {
                 return ResourceManager.GetString("CreateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Удалить.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Редактировать.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
         
@@ -291,6 +354,15 @@ namespace Resources {
         public static string Registration {
             get {
                 return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уверены что хотите удалить эту книгу?.
+        /// </summary>
+        public static string Sureornot {
+            get {
+                return ResourceManager.GetString("Sureornot", resourceCulture);
             }
         }
         

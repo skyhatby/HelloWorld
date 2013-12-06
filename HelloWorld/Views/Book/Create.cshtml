@@ -1,33 +1,30 @@
 ﻿@model HelloWorld.Models.Book
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Resources.Resource.CreateBook;
 }
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Book</legend>
+        <legend>@Resources.Resource.CreateBook</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BookName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BookName)
+        <p class="col-lg-3 control-label">@Resources.Resource.BookName</p>
+        <div class="col-lg-8">
+            @Html.TextBoxFor(model => model.BookName, new { @class = "form-control", @placeholder = @Resources.Resource.BookName })
             @Html.ValidationMessageFor(model => model.BookName)
         </div>
-        <p>
-            <input type="submit" value="Create" />
-        </p>
+        <div class="col-lg-10 col-lg-offset-6">
+            <input type="submit" class="btn btn-success" value="@Resources.Resource.CreateBook" />
+        </div>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="btn btn-danger">
+    @Html.ActionLink(@Resources.Resource.BackToList, "Index")
 </div>
 
 @section Scripts {

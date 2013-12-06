@@ -201,4 +201,28 @@
   <data name="UserBooks" xml:space="preserve">
     <value>Your Books</value>
   </data>
+  <data name="AddChapter" xml:space="preserve">
+    <value>Add new chapter</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="BookName" xml:space="preserve">
+    <value>Book name:</value>
+  </data>
+  <data name="Chapters" xml:space="preserve">
+    <value>Chapters</value>
+  </data>
+  <data name="CreateBook" xml:space="preserve">
+    <value>Create new book</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Sureornot" xml:space="preserve">
+    <value>Are you sure you want to delete this book?</value>
+  </data>
 </root>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HelloWorld.Models.Chapter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(@Resources.Resource.AddChapter, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChapterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChapterContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChapterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChapterContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChapterId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChapterId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChapterId })
+        </td>
+    </tr>
+}
+
+</table>

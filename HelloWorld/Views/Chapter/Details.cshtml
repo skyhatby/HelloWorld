@@ -1,0 +1,36 @@
+﻿@model HelloWorld.Models.Chapter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Chapter</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChapterName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChapterName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChapterContent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChapterContent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BookId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BookId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ChapterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
