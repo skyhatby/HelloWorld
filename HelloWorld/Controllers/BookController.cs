@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -69,6 +70,42 @@ namespace HelloWorld.Controllers
 
             return View(chapter);
         }
+
+
+
+
+        //
+        // GET: /Default1/Create
+
+        //public ActionResult AddTag(int id)
+        //{
+        //    ViewBag.ChapterId = id;
+        //    return View();
+        //}
+
+        ////
+        //// POST: /Default1/Create
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult AddTag(int tagid)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var chapter = db.Chapters.Find(5);
+        //        //var ta = db.Tags.Find(tag);
+        //        chapter.Tags.Add(tag);
+        //        //db.Chapters.Find(5).Tags.Add(tag);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    ViewBag.ChapterId = 5;
+        //    return View();
+        //}
+
+
+
+
 
         //
         // GET: /Chapter/Edit/5

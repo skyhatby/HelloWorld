@@ -109,3 +109,14 @@ F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.en.r
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\en\HelloWorld.resources.dll
 F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.dll
 F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.pdb
+F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.dll
+F:\Прога\HelloWorld\HelloWorld\bin\ICSharpCode.SharpZipLib.dll
+F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.dll
+F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.Linq.dll
+F:\Прога\HelloWorld\HelloWorld\bin\Remotion.Linq.dll
+F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.pdb
+F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.xml
+F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.pdb
+F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.xml
+F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.Linq.xml
+F:\Прога\HelloWorld\HelloWorld\bin\Remotion.Linq.xml

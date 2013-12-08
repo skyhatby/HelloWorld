@@ -11,7 +11,6 @@ namespace HelloWorld.Models
         public HelloWorldDb()
             : base("name=DefaultConnection")
         {
-            
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }

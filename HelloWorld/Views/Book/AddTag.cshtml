@@ -1,0 +1,52 @@
+﻿@model HelloWorld.Models.Tag
+
+@{
+    ViewBag.Title = "AddTag";
+}
+
+<h2>AddTag</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+   
+    <fieldset>
+        <legend>Chapter</legend>
+        
+         <div class="editor-label">
+            @Html.LabelFor(model => model.TagId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TagId)
+            @Html.ValidationMessageFor(model => model.TagId)
+        </div>
+
+        @*<select>
+            @foreach (var item in Model)
+            {
+                <option value="@item.TagId">@item.TagContent</option>
+            }
+        </select>*@
+
+       @* <div class="editor-field">
+            @Html.DropDownList()
+            @Html.DropDownList("Tags", String.Empty)
+            @Html.ValidationMessageFor(model => model.Tags)
+        </div>*@
+
+
+        <p>
+           @* <input type="hidden" value=" @(new{tagid = 2})" />*@
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -9,7 +9,7 @@ namespace HelloWorld.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(HelloWorld.Models.HelloWorldDb context)
