@@ -1,35 +1,33 @@
 ﻿@model HelloWorld.Models.Chapter
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Resources.Resource.Create;
 }
 
-<h2>Create</h2>
+<h2>@Resources.Resource.Create @Resources.Resource.Chapter</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Chapter</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ChapterName)
+   <div class="form-group">
+        <p class="col-lg-3 control-label">@Resources.Resource.ChapterName</p>
+        <div class="col-lg-8">
+            @Html.TextBoxFor(m => m.ChapterName, new { @class = "form-control", @placeholder = @Resources.Resource.ChapterName })
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ChapterName)
-            @Html.ValidationMessageFor(model => model.ChapterName)
+    </div>
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-6">
+            <input type="hidden" value=" @(new { id = @ViewBag.BookId })" />
+            <input type="submit" class="btn btn-success" value="@Resources.Resource.Create" />
         </div>
-        <p>
-            <input type="hidden" value=" @(new{id = @ViewBag.BookId})" />
-            <input type="submit" class="btn btn-success" value="Create" />
-        </p>
-    </fieldset>
+    </div>
+   
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Chapters", new {id = ViewBag.BookId})
-</div>
+
+<a href="~/Book/Chapters/@ViewBag.BookId" class="btn btn-danger">@Resources.Resource.BackToList</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -1,47 +1,38 @@
 ﻿@model HelloWorld.Models.Chapter
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @Resources.Resource.Edit+" "+@Resources.Resource.ChapterName;
 }
 
-<h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Chapter</legend>
+        <legend>@Resources.Resource.Edit @Resources.Resource.ChapterName</legend>
 
         @Html.HiddenFor(model => model.ChapterId)
+        @Html.HiddenFor(model => model.ChapterContent)
+        @Html.HiddenFor(model => model.BookId)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ChapterName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ChapterName)
+        <p class="col-lg-3 control-label">@Resources.Resource.ChapterName</p>
+        <div class="col-lg-8">
+            @Html.TextBoxFor(model => model.ChapterName, new { @class = "form-control", @placeholder = @Resources.Resource.BookName })
             @Html.ValidationMessageFor(model => model.ChapterName)
         </div>
-
-        <div class="editor-field">
-            @Html.HiddenFor(model => model.ChapterContent)
-            @Html.ValidationMessageFor(model => model.ChapterContent)
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-6">
+                <input type="submit" class="btn btn-success" value="@Resources.Resource.Edit" />
+            </div>
         </div>
-
-        <div class="editor-field">
-            @Html.HiddenFor(model => model.BookId)
-            @Html.ValidationMessageFor(model => model.BookId)
-        </div>
-
-        <p>
-            <input type="submit" class="btn btn-success" value="Save" />
-        </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Chapters",new {id = Model.BookId})
-</div>
+
+<a href="~/Book/Chapters/@Model.BookId" class="btn btn-danger">@Resources.Resource.BackToList</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

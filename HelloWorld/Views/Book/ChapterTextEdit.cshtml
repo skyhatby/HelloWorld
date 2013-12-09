@@ -1,7 +1,7 @@
 @model dynamic
 
 @{
-    ViewBag.Title = "Edit"; 
+    ViewBag.Title = Resources.Resource.EditText; 
 }
 
 
@@ -27,9 +27,9 @@
     <div class="mdd_resizer"></div>
     <p>
         <input type="hidden" value=" @(new{id = @ViewBag.ChapterId})" />
-        <input type="submit" value="Save" />
+        <input type="submit" class="btn btn-success" value="Save" />
     </p>
-
+    <hr />
 
 }
 

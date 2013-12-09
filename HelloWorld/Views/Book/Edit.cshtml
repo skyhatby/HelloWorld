@@ -1,45 +1,32 @@
 ﻿@model HelloWorld.Models.Book
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @Resources.Resource.Edit;
 }
 
-<h2>Edit</h2>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Book</legend>
-
+        <legend>@Resources.Resource.Edit</legend>
         @Html.HiddenFor(model => model.BookId)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BookName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BookName)
+        @Html.HiddenFor(model => model.UserId, "UserProfile")
+        <p class="col-lg-3 control-label">@Resources.Resource.BookName</p>
+        <div class="col-lg-8">
+            @Html.TextBoxFor(model => model.BookName, new { @class = "form-control", @placeholder = @Resources.Resource.BookName })
             @Html.ValidationMessageFor(model => model.BookName)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserId, "UserProfile")
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-6">
+                <input type="submit" class="btn btn-success" value="@Resources.Resource.Edit" />
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("UserId", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserId)
-        </div>
-
-        <p>
-            <input type="submit" class="btn btn-success" value="Save" />
-        </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<a href="~/Book" class="btn btn-danger">@Resources.Resource.BackToList</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

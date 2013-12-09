@@ -267,4 +267,40 @@
   <data name="YouEntered" xml:space="preserve">
     <value>Вы вошли как </value>
   </data>
+  <data name="AllBooks" xml:space="preserve">
+    <value>Все книги</value>
+  </data>
+  <data name="Chapter" xml:space="preserve">
+    <value>Глава</value>
+  </data>
+  <data name="ChapterName" xml:space="preserve">
+    <value>Название главы:</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="EditText" xml:space="preserve">
+    <value>Редактировать текст</value>
+  </data>
+  <data name="LogInForm" xml:space="preserve">
+    <value>Форма входа</value>
+  </data>
+  <data name="NewPass" xml:space="preserve">
+    <value>Ваш новый пароль:</value>
+  </data>
+  <data name="OldPass" xml:space="preserve">
+    <value>Ваш старый пароль:</value>
+  </data>
+  <data name="ReadChapter" xml:space="preserve">
+    <value>Читать главу</value>
+  </data>
+  <data name="SureornotChapter" xml:space="preserve">
+    <value>Вы уверены что хотите удалить эту главу?</value>
+  </data>
+  <data name="YouDropedPass" xml:space="preserve">
+    <value>Ты снёс пароль!</value>
+  </data>
+  <data name="YouDropedPassIn" xml:space="preserve">
+    <value>Пароль снесён нахуй в шесть единиц!</value>
+  </data>
 </root>

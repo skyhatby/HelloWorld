@@ -1,33 +1,38 @@
 ﻿@model IEnumerable<HelloWorld.Models.Chapter>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @Resources.Resource.Chapters;
 }
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink(@Resources.Resource.AddChapter, "ChapterCreate", new {id = ViewBag.BookId})
+    <a href="~/Book/ChapterCreate/@ViewBag.BookId" class="btn btn-default">@Resources.Resource.AddChapter</a>
 </p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ChapterName)
-        </th>
-        <th></th>
-    </tr>
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Resources.Resource.ChapterName
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChapterName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "ChapterEdit", new { id=item.ChapterId }) |
-            @Html.ActionLink("Details", "ChapterDetails", new { id=item.ChapterId }) |
-            @Html.ActionLink("Delete", "ChapterDelete", new { id=item.ChapterId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChapterName)
+                </td>
+                <td>
+                  <a href="~/Book/ChapterEdit/@item.ChapterId" class="btn btn-warning">@Resources.Resource.Edit</a> |
+                    <a href="~/Book/ChapterDetails/@item.ChapterId" class="btn btn-success">@Resources.Resource.ReadChapter</a> |
+                    <a href="~/Book/ChapterDelete/@item.ChapterId" class="btn btn-danger">@Resources.Resource.Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>

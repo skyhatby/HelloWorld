@@ -1,12 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Ты снёс пароль";
+﻿@{
+    ViewBag.Title = Resources.Resource.YouDropedPass;
 }
 
 
-    <h1>@ViewBag.Title.</h1>
+<h1>@ViewBag.Title.</h1>
 
 
-Пароль снесён нахуй
+@Resources.Resource.YouDropedPassIn
 <hr />
-@Html.ActionLink("Back to List", "Index")
+<div class="btn btn-success">
+    @Html.ActionLink("Back to List", "Index")
+</div>

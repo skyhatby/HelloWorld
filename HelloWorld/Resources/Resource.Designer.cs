@@ -124,6 +124,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Все книги.
+        /// </summary>
+        public static string AllBooks {
+            get {
+                return ResourceManager.GetString("AllBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вернуться.
         /// </summary>
         public static string BackToList {
@@ -174,6 +183,24 @@ namespace Resources {
         public static string ChangePassF {
             get {
                 return ResourceManager.GetString("ChangePassF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Глава.
+        /// </summary>
+        public static string Chapter {
+            get {
+                return ResourceManager.GetString("Chapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Название главы:.
+        /// </summary>
+        public static string ChapterName {
+            get {
+                return ResourceManager.GetString("ChapterName", resourceCulture);
             }
         }
         
@@ -277,6 +304,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Создать новую книгу.
         /// </summary>
         public static string CreateBook {
@@ -309,6 +345,15 @@ namespace Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Редактировать текст.
+        /// </summary>
+        public static string EditText {
+            get {
+                return ResourceManager.GetString("EditText", resourceCulture);
             }
         }
         
@@ -367,6 +412,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма входа.
+        /// </summary>
+        public static string LogInForm {
+            get {
+                return ResourceManager.GetString("LogInForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ваш логин: .
         /// </summary>
         public static string LoginLetter {
@@ -412,6 +466,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ваш новый пароль:.
+        /// </summary>
+        public static string NewPass {
+            get {
+                return ResourceManager.GetString("NewPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ваш старый пароль:.
+        /// </summary>
+        public static string OldPass {
+            get {
+                return ResourceManager.GetString("OldPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пароль изменен..
         /// </summary>
         public static string PassChanged {
@@ -448,6 +520,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Читать главу.
+        /// </summary>
+        public static string ReadChapter {
+            get {
+                return ResourceManager.GetString("ReadChapter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Регистрация.
         /// </summary>
         public static string Registration {
@@ -462,6 +543,15 @@ namespace Resources {
         public static string Sureornot {
             get {
                 return ResourceManager.GetString("Sureornot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уверены что хотите удалить эту главу?.
+        /// </summary>
+        public static string SureornotChapter {
+            get {
+                return ResourceManager.GetString("SureornotChapter", resourceCulture);
             }
         }
         
@@ -498,6 +588,24 @@ namespace Resources {
         public static string White {
             get {
                 return ResourceManager.GetString("White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ты снёс пароль!.
+        /// </summary>
+        public static string YouDropedPass {
+            get {
+                return ResourceManager.GetString("YouDropedPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пароль снесён нахуй в шесть единиц!.
+        /// </summary>
+        public static string YouDropedPassIn {
+            get {
+                return ResourceManager.GetString("YouDropedPassIn", resourceCulture);
             }
         }
         

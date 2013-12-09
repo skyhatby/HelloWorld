@@ -267,4 +267,40 @@
   <data name="YouEntered" xml:space="preserve">
     <value>You entered as </value>
   </data>
+  <data name="AllBooks" xml:space="preserve">
+    <value>All Books</value>
+  </data>
+  <data name="Chapter" xml:space="preserve">
+    <value>Chapter</value>
+  </data>
+  <data name="ChapterName" xml:space="preserve">
+    <value>Chapter Name:</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="EditText" xml:space="preserve">
+    <value>Edit Text</value>
+  </data>
+  <data name="LogInForm" xml:space="preserve">
+    <value>LogIn Form</value>
+  </data>
+  <data name="NewPass" xml:space="preserve">
+    <value>Your new Password:</value>
+  </data>
+  <data name="OldPass" xml:space="preserve">
+    <value>Your old Password:</value>
+  </data>
+  <data name="ReadChapter" xml:space="preserve">
+    <value>Read Chapter</value>
+  </data>
+  <data name="SureornotChapter" xml:space="preserve">
+    <value>Are you sure you want to delete this chapter?</value>
+  </data>
+  <data name="YouDropedPass" xml:space="preserve">
+    <value>You have Droped Password!</value>
+  </data>
+  <data name="YouDropedPassIn" xml:space="preserve">
+    <value>You have Droped Password into six 1</value>
+  </data>
 </root>

@@ -1,28 +1,21 @@
 ﻿@model HelloWorld.Models.Chapter
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Resources.Resource.ReadChapter;
 }
 
-<h2>Details</h2>
-
-<fieldset>
-    <legend>Chapter</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ChapterName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ChapterName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ChapterContent)
-    </div>
-    @(Html.Raw(ViewData["Content"]))
-</fieldset>
+<h2>
+    @Resources.Resource.Chapter:
+    @Html.DisplayFor(model => model.ChapterName)
+</h2>
 <p>
-    @Html.ActionLink("Edit", "ChapterEdit", new { id=Model.ChapterId }) |
-    @Html.ActionLink("Edit Text", "ChapterTextEdit", new { id=Model.ChapterId }) |
-    @Html.ActionLink("Back to List", "Chapters", new { id = Model.BookId})
+    <a href="~/Book/ChapterEdit/@Model.ChapterId" class="btn btn-warning">@Resources.Resource.Edit</a> |
+    <a href="~/Book/ChapterTextEdit/@Model.ChapterId" class="btn btn-success">@Resources.Resource.EditText</a> |
+    <a href="~/Book/Chapters/@Model.BookId" class="btn btn-danger">@Resources.Resource.BackToList</a>
+
 </p>
+
+@(Html.Raw(ViewData["Content"]))
+
+
+<hr />

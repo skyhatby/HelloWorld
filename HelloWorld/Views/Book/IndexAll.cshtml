@@ -1,42 +1,45 @@
 ﻿@model IEnumerable<HelloWorld.Models.Book>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @Resources.Resource.AllBooks;
 }
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink(@Resources.Resource.CreateBook, "Create")
+    <a href="~/Book/Create" class="btn btn-default">@Resources.Resource.CreateBook</a>
 </p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BookName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserProfile.UserName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserProfile.UserName)
-        </td>
-        <td>
-            @if (item.UserProfile.UserName == User.Identity.Name)
-            {
-                @Html.ActionLink(@Resources.Resource.Edit, "Edit", new { id=item.BookId }) 
-                @Html.ActionLink(@Resources.Resource.Delete, "Delete", new { id=item.BookId })
-            }
-            @Html.ActionLink(@Resources.Resource.Chapters, "Chapters", new { id=item.BookId }) 
-        </td>
-    </tr>
-}
+<table class=" table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Resources.Resource.BookName
+            </th>
+            <th>
+                @Resources.Resource.User:
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserProfile.UserName)
+                </td>
+                <td>
+                    @if (item.UserProfile.UserName == User.Identity.Name)
+                    {
+                        <a href="~/Book/Edit/@item.BookId" class="btn btn-warning">@Resources.Resource.Edit</a> 
+                        <a href="~/Book/Delete/@item.BookId" class="btn btn-danger">@Resources.Resource.Delete</a>
+                    }
+                    <a href="~/Book/Chapters/@item.BookId" class="btn btn-success">@Resources.Resource.Chapters</a>
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>
