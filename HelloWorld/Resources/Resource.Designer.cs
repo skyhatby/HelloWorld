@@ -115,6 +115,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Админка.
+        /// </summary>
+        public static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вернуться.
         /// </summary>
         public static string BackToList {
@@ -124,11 +133,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Тёмная.
+        /// </summary>
+        public static string Black {
+            get {
+                return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Название книги:.
         /// </summary>
         public static string BookName {
             get {
                 return ResourceManager.GetString("BookName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Книги.
+        /// </summary>
+        public static string Books {
+            get {
+                return ResourceManager.GetString("Books", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Изменить пароль.
+        /// </summary>
+        public static string ChangePass {
+            get {
+                return ResourceManager.GetString("ChangePass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма изменения пароля.
+        /// </summary>
+        public static string ChangePassF {
+            get {
+                return ResourceManager.GetString("ChangePassF", resourceCulture);
             }
         }
         
@@ -147,6 +192,15 @@ namespace Resources {
         public static string ChooseLang {
             get {
                 return ResourceManager.GetString("ChooseLang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на  Выберите тему.
+        /// </summary>
+        public static string ChooseTheme {
+            get {
+                return ResourceManager.GetString("ChooseTheme", resourceCulture);
             }
         }
         
@@ -268,6 +322,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Неправильный текущий пароль или недопустимый новый пароль..
+        /// </summary>
+        public static string IncorrectPass {
+            get {
+                return ResourceManager.GetString("IncorrectPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Список пользователей.
         /// </summary>
         public static string IndexHeader {
@@ -295,6 +358,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя пользователя или пароль указаны неверно..
+        /// </summary>
+        public static string LoginError {
+            get {
+                return ResourceManager.GetString("LoginError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ваш логин: .
         /// </summary>
         public static string LoginLetter {
@@ -309,6 +381,15 @@ namespace Resources {
         public static string LogOut {
             get {
                 return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Управление учетной записью.
+        /// </summary>
+        public static string ManageAcc {
+            get {
+                return ResourceManager.GetString("ManageAcc", resourceCulture);
             }
         }
         
@@ -331,11 +412,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Пароль изменен..
+        /// </summary>
+        public static string PassChanged {
+            get {
+                return ResourceManager.GetString("PassChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ваш пароль: .
         /// </summary>
         public static string PassLetter {
             get {
                 return ResourceManager.GetString("PassLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пароль задан..
+        /// </summary>
+        public static string PassSet {
+            get {
+                return ResourceManager.GetString("PassSet", resourceCulture);
             }
         }
         
@@ -367,6 +466,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Тэги.
+        /// </summary>
+        public static string Tag {
+            get {
+                return ResourceManager.GetString("Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пользователь.
         /// </summary>
         public static string User {
@@ -381,6 +489,24 @@ namespace Resources {
         public static string UserBooks {
             get {
                 return ResourceManager.GetString("UserBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Светлая.
+        /// </summary>
+        public static string White {
+            get {
+                return ResourceManager.GetString("White", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы вошли как .
+        /// </summary>
+        public static string YouEntered {
+            get {
+                return ResourceManager.GetString("YouEntered", resourceCulture);
             }
         }
     }

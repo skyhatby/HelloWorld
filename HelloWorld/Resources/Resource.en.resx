@@ -225,4 +225,46 @@
   <data name="Sureornot" xml:space="preserve">
     <value>Are you sure you want to delete this book?</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Books" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangePassF" xml:space="preserve">
+    <value>Change Password Form</value>
+  </data>
+  <data name="ChooseTheme" xml:space="preserve">
+    <value>Choose Theme</value>
+  </data>
+  <data name="IncorrectPass" xml:space="preserve">
+    <value>Incorrect new or old Password.</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Incorrect Login or Password.</value>
+  </data>
+  <data name="ManageAcc" xml:space="preserve">
+    <value>Manage your Account</value>
+  </data>
+  <data name="PassChanged" xml:space="preserve">
+    <value>Password Changed.</value>
+  </data>
+  <data name="PassSet" xml:space="preserve">
+    <value>Password Set.</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="White" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="YouEntered" xml:space="preserve">
+    <value>You entered as </value>
+  </data>
 </root>

@@ -6,9 +6,15 @@
 
 @foreach (var item in Model)
 {
+    <hr />
     <div>
-        <h4>@item.UserName</h4>
-        <div>@item.Email, @item.UserId</div>
-        <hr />
+        <h4>@Resources.Resource.User : @item.UserName</h4>
+        <div>@Resources.Resource.Books: </div>
+        @foreach(var it in  item.Books)
+        {
+            <hr />
+            @Html.ActionLink(@it.BookName, "Index", "Book",new {id = it.BookId},null)
+        }
+        
     </div>
 }

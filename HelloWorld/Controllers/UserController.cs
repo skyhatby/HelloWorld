@@ -5,12 +5,16 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using HelloWorld.Filters;
 using HelloWorld.Models;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 
 namespace HelloWorld.Controllers
 {
+    [Culture]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private HelloWorldDb db = new HelloWorldDb();
@@ -19,84 +23,12 @@ namespace HelloWorld.Controllers
         //
         // GET: /Account/Manage
 
-        public ActionResult Manage(int userId,AccountController.ManageMessageId? message)
+        public ActionResult Manage(int userId)
         {
-            string userName = db.UserProfiles.Find(userId).UserName;
-            ViewBag.StatusMessage =
-                message == AccountController.ManageMessageId.ChangePasswordSuccess ? "Пароль изменен."
-                : message == AccountController.ManageMessageId.SetPasswordSuccess ? "Пароль задан."
-                : message == AccountController.ManageMessageId.RemoveLoginSuccess ? "Внешняя учетная запись удалена."
-                : "";
-            ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            ViewBag.ReturnUrl = Url.Action("Manage");
-            ViewBag.UserName = userName;
-            ViewBag.UserId = userId;
+            var user = db.UserProfiles.Find(userId);
+            var token = WebSecurity.GeneratePasswordResetToken(user.UserName);
+            WebSecurity.ResetPassword(token, "111111");
             return View();
-        }
-
-        //
-        // POST: /Account/Manage
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Manage(LocalPasswordModel model, int id) //TODO: доделать
-        {
-            //int userId = 1;
-            string userName = db.UserProfiles.Find(id).UserName;
-            bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(id);
-            ViewBag.HasLocalPassword = hasLocalAccount;
-            ViewBag.ReturnUrl = Url.Action("Manage");
-            if (hasLocalAccount)
-            {
-                if (ModelState.IsValid)
-                {
-                    // В ряде случаев при сбое ChangePassword породит исключение, а не вернет false.
-                    bool changePasswordSucceeded;
-                    try
-                    {
-                        changePasswordSucceeded = WebSecurity.ChangePassword(userName, model.OldPassword, model.NewPassword);
-                    }
-                    catch (Exception)
-                    {
-                        changePasswordSucceeded = false;
-                    }
-
-                    if (changePasswordSucceeded)
-                    {
-                        return RedirectToAction("Manage", new {userId = id, Message = AccountController.ManageMessageId.ChangePasswordSuccess });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Неправильный текущий пароль или недопустимый новый пароль.");
-                    }
-                }
-            }
-            else
-            {
-                // У пользователя нет локального пароля, уберите все ошибки проверки, вызванные отсутствующим
-                // полем OldPassword
-                ModelState state = ModelState["OldPassword"];
-                if (state != null)
-                {
-                    state.Errors.Clear();
-                }
-
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        WebSecurity.CreateAccount(userName, model.NewPassword);
-                        return RedirectToAction("Manage", new { Message = AccountController.ManageMessageId.SetPasswordSuccess });
-                    }
-                    catch (Exception)
-                    {
-                        ModelState.AddModelError("", String.Format("Не удалось создать локальную учетную запись. Возможно, учетная запись \"{0}\" уже существует.", userName));
-                    }
-                }
-            }
-
-            // Появление этого сообщения означает наличие ошибки; повторное отображение формы
-            return View(model);
         }
 
 
@@ -108,44 +40,8 @@ namespace HelloWorld.Controllers
             return View(db.UserProfiles.ToList());
         }
 
-        //
-        // GET: /User/Details/5
 
-        public ActionResult Details(int id = 0)
-        {
-            UserProfile userprofile = db.UserProfiles.Find(id);
-            if (userprofile == null)
-            {
-                return HttpNotFound();
-            }
-            return View(userprofile);
-        }
-
-        //
-        // GET: /User/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /User/Create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(UserProfile userprofile)
-        {
-            if (ModelState.IsValid)
-            {
-                db.UserProfiles.Add(userprofile);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(userprofile);
-        }
-
+        
         //
         // GET: /User/Edit/5
 

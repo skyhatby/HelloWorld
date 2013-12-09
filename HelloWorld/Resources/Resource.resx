@@ -225,4 +225,46 @@
   <data name="Sureornot" xml:space="preserve">
     <value>Вы уверены что хотите удалить эту книгу?</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Админка</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="Books" xml:space="preserve">
+    <value>Книги</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="ChangePassF" xml:space="preserve">
+    <value>Форма изменения пароля</value>
+  </data>
+  <data name="ChooseTheme" xml:space="preserve">
+    <value> Выберите тему</value>
+  </data>
+  <data name="IncorrectPass" xml:space="preserve">
+    <value>Неправильный текущий пароль или недопустимый новый пароль.</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Имя пользователя или пароль указаны неверно.</value>
+  </data>
+  <data name="ManageAcc" xml:space="preserve">
+    <value>Управление учетной записью</value>
+  </data>
+  <data name="PassChanged" xml:space="preserve">
+    <value>Пароль изменен.</value>
+  </data>
+  <data name="PassSet" xml:space="preserve">
+    <value>Пароль задан.</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Тэги</value>
+  </data>
+  <data name="White" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="YouEntered" xml:space="preserve">
+    <value>Вы вошли как </value>
+  </data>
 </root>
