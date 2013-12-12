@@ -98,7 +98,6 @@ F:\Прога\HelloWorld\HelloWorld\bin\zh-Hant\System.Spatial.resources.dll
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.dll
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb
-F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Migrations.InitialCreate.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csproj.GenerateResource.Cache
 F:\Прога\HelloWorld\HelloWorld\bin\RazorEngine.dll
 F:\Прога\HelloWorld\HelloWorld\bin\RazorEngine.pdb
@@ -107,19 +106,7 @@ F:\Прога\HelloWorld\HelloWorld\bin\en\HelloWorld.resources.dll
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.en.resources
 F:\Прога\HelloWorld\HelloWorld\obj\Debug\en\HelloWorld.resources.dll
-F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.dll
 F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.pdb
-F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.dll
-F:\Прога\HelloWorld\HelloWorld\bin\ICSharpCode.SharpZipLib.dll
-F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.dll
-F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.Linq.dll
-F:\Прога\HelloWorld\HelloWorld\bin\Remotion.Linq.dll
-F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.pdb
-F:\Прога\HelloWorld\HelloWorld\bin\Common.Logging.xml
-F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.pdb
-F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.xml
-F:\Прога\HelloWorld\HelloWorld\bin\Lucene.Net.Linq.xml
-F:\Прога\HelloWorld\HelloWorld\bin\Remotion.Linq.xml
 D:\Project\HelloWorld\HelloWorld\HelloWorld\obj\Debug\HelloWorld.csprojResolveAssemblyReference.cache
 D:\Project\HelloWorld\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Migrations.InitialCreate.resources
 D:\Project\HelloWorld\HelloWorld\HelloWorld\obj\Debug\HelloWorld.Resources.Resource.resources
@@ -231,3 +218,4 @@ D:\Project\HelloWorld\HelloWorld\HelloWorld\bin\zh-Hans\System.Spatial.resources
 D:\Project\HelloWorld\HelloWorld\HelloWorld\bin\zh-Hant\System.Spatial.resources.dll
 D:\Project\HelloWorld\HelloWorld\HelloWorld\obj\Debug\en\HelloWorld.resources.dll
 D:\Project\HelloWorld\HelloWorld\HelloWorld\obj\Debug\HelloWorld.pdb
+F:\Прога\HelloWorld\HelloWorld\bin\MarkdownDeep.dll
