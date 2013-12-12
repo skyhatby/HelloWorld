@@ -1,3 +1,5 @@
+using WebMatrix.WebData;
+
 namespace HelloWorld.Migrations
 {
     using System;
@@ -10,10 +12,12 @@ namespace HelloWorld.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(HelloWorld.Models.HelloWorldDb context)
         {
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

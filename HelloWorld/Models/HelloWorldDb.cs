@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using HelloWorld.Migrations;
 
 namespace HelloWorld.Models
 {
@@ -18,5 +19,11 @@ namespace HelloWorld.Models
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Vote> Votes { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<HelloWorldDb, Configuration>());
+        }
+
     }
 }
