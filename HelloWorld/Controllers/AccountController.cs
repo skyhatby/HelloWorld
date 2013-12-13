@@ -78,7 +78,7 @@ namespace HelloWorld.Controllers
                 {
                     var confirmationToken = WebSecurity.CreateUserAndAccount(model.UserName, model.Password, null, true);
 
-                    var uri = new Uri("http://" + System.Web.HttpContext.Current.Request.Url.Host + ":" + System.Web.HttpContext.Current.Request.Url.Port + "/Account/RegisterConfirmation/" + confirmationToken);
+                    var uri = new Uri("http://" + System.Web.HttpContext.Current.Request.Url.Host + "/Account/RegisterConfirmation/" + confirmationToken);
                     // int host = System.Web.HttpContext.Current.Request.Url.Port;
                     // String host = uri.Scheme + Uri.SchemeDelimiter + uri.Host + ":" + uri.Port;
 
