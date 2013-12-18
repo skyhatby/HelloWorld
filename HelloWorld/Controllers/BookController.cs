@@ -22,10 +22,10 @@ namespace HelloWorld.Controllers
             return View(books.ToList());
         }
 
-        public ActionResult IndexAll()
+        public ActionResult IndexAll(string search = null)
         {
-            var books = db.Books.Include(m => m.UserProfile);
-            return View(books.ToList());
+            var books = db.Books.Include(m => m.UserProfile).OrderBy(r => r.BookName).Where(r => search == null || r.BookName.StartsWith(search)).ToList();
+            return View(books);
         }
 
         //

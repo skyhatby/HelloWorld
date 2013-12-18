@@ -4,17 +4,61 @@
     ViewBag.Title = "Home Page";
 }
 
-@foreach (var item in Model)
-{
-    <hr />
-    <div>
-        <h4>@Resources.Resource.User : @item.UserName</h4>
-        <div>@Resources.Resource.Books: </div>
-        @foreach(var it in  item.Books)
+<form method="GET">
+    <input type="search" class="form-control" name="search" />
+    <input type="submit" class="btn btn-default" value="Search" />
+</form>
+
+
+<div class="panel-group" id="accordion">
+
+    @foreach (var item in Model)
+    {
+        if (item.Books.Count != 0)
         {
-            <hr />
-            @Html.ActionLink(@it.BookName, "Chapters", "Book",new {id = it.BookId},null)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_@item.UserId">@Resources.Resource.User : @item.UserName
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse_@item.UserId" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div>@Resources.Resource.Books: </div>
+                    @foreach (var it in item.Books)
+                    {
+                        <hr />
+                        @Html.ActionLink(@it.BookName, "Chapters", "Book", new { id = it.BookId }, null)
+                    }
+                </div>
+            </div>
+        </div>
         }
-        
+    }
+</div>
+
+<div id="carousel-captions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel-captions" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-captions" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Images/book1.jpg" data-src="holder.js/450x250/auto/#777:#777" alt="450x250">
+        </div>
+        <div class="item">
+            <img src="~/Images/book2.jpg" data-src="holder.js/450x250/auto/#666:#666" alt="450x250">
+        </div>
     </div>
-}
+    <a class="left carousel-control" href="#carousel-captions" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-captions" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+
+
+
