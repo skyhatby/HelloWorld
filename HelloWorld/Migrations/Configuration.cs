@@ -21,20 +21,20 @@ namespace HelloWorld.Migrations
                 WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
             }
 
-            if (!WebSecurity.UserExists("skyhat"))
-            {
-                WebSecurity.CreateUserAndAccount("skyhat", "mazahaka");
-            }
+            //if (!WebSecurity.UserExists("skyhat"))
+            //{
+            //    WebSecurity.CreateUserAndAccount("skyhat", "mazahaka");
+            //}
 
-            if (!Roles.RoleExists("Admin"))
-            {
-                Roles.CreateRole("Admin");
-            }
+            //if (!Roles.RoleExists("Admin"))
+            //{
+            //    Roles.CreateRole("Admin");
+            //}
 
-            if (!Roles.IsUserInRole("skyhat", "Admin"))
-            {
-                Roles.AddUserToRole("skyhat","Admin");
-            }
+            //if (!Roles.IsUserInRole("skyhat", "Admin"))
+            //{
+            //    Roles.AddUserToRole("skyhat","Admin");
+            //}
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
