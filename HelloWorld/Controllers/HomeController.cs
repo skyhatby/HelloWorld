@@ -15,7 +15,7 @@ namespace HelloWorld.Controllers
 
         public ActionResult Index(string search = null)
         {
-            var model = db.UserProfiles.ToList().OrderBy(r => r.UserName).Take(10).Where(r => search == null || r.UserName.StartsWith(search));
+            var model = db.UserProfiles.ToList().OrderBy(r => r.UserName).Where(r => search == null || r.UserName.StartsWith(search));
             return View(model);
         }
 

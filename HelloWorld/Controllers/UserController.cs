@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using HelloWorld.Filters;
 using HelloWorld.Models;
-using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 
 namespace HelloWorld.Controllers
@@ -23,7 +17,7 @@ namespace HelloWorld.Controllers
         //
         // GET: /Account/Manage
 
-        public ActionResult Manage(int userId)
+        public ActionResult DropPassword(int userId)
         {
             var user = db.UserProfiles.Find(userId);
             var token = WebSecurity.GeneratePasswordResetToken(user.UserName);

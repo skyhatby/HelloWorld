@@ -484,6 +484,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Книгам.
+        /// </summary>
+        public static string OnBooks {
+            get {
+                return ResourceManager.GetString("OnBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пароль изменен..
         /// </summary>
         public static string PassChanged {
@@ -538,6 +547,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Поиск по .
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вы уверены что хотите удалить эту книгу?.
         /// </summary>
         public static string Sureornot {
@@ -579,6 +597,15 @@ namespace Resources {
         public static string UserBooks {
             get {
                 return ResourceManager.GetString("UserBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пользователям.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
             }
         }
         

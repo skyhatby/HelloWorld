@@ -303,4 +303,13 @@
   <data name="YouDropedPassIn" xml:space="preserve">
     <value>Пароль снесён нахуй в шесть единиц!</value>
   </data>
+  <data name="OnBooks" xml:space="preserve">
+    <value>Книгам</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск по </value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пользователям</value>
+  </data>
 </root>

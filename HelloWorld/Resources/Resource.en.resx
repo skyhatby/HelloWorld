@@ -303,4 +303,13 @@
   <data name="YouDropedPassIn" xml:space="preserve">
     <value>You have Droped Password into six 1</value>
   </data>
+  <data name="OnBooks" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search on </value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
 </root>
