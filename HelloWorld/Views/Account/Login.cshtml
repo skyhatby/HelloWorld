@@ -31,21 +31,19 @@
                         @Html.ValidationMessageFor(m => m.Password)
                     </div>
                 </div>
-               
+
                 <div class="form-group">
                     <p class="col-lg-2 control-label">@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</p>
                     <div class="col-lg-1">
-                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-control"})
-                        
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-control" })
+
                     </div>
                 </div>
             </div>
-            
+
             <input type="submit" class="btn btn-success" value="@Resources.Resource.LogIn" />
         </fieldset>
-        <p class="btn btn-danger">
-            @Html.ActionLink(Resources.Resource.Registration, "Register")
-        </p>
+        <a href="~/Account/Register" class="btn btn-danger">@Resources.Resource.Registration</a>
     }
 </section>
 

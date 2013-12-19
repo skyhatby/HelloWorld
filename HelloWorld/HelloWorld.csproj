@@ -208,6 +208,7 @@
     <Compile Include="Models\Chapter.cs" />
     <Compile Include="Models\HelloWorldDb.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagChapters.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

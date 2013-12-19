@@ -13,6 +13,7 @@ namespace HelloWorld.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
+        public DbSet<TagChapters> TagChapterses { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Vote> Votes { get; set; }
 

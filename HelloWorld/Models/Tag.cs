@@ -5,21 +5,21 @@ namespace HelloWorld.Models
 {
     public class Tag
     {
-        private ICollection<Chapter> _chapters;
+        private ICollection<TagChapters> _tagchapters;
 
         public Tag()
         {
-            _chapters = new List<Chapter>();
+            _tagchapters = new List<TagChapters>();
         }
 
         [Key]
         public int TagId { get; set; }
         public string TagContent { get; set; }
 
-        public virtual ICollection<Chapter> Chapters
+        public virtual ICollection<TagChapters> TagChapterses
         {
-            get { return _chapters; }
-            set { _chapters = value; }
+            get { return _tagchapters; }
+            set { _tagchapters = value; }
         }
 
     }

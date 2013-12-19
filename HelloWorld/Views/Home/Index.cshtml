@@ -28,8 +28,9 @@
                     <div>@Resources.Resource.Books: </div>
                     @foreach (var it in item.Books)
                     {
-                        <hr />
-                        @Html.ActionLink(@it.BookName, "Chapters", "Book", new { id = it.BookId }, null)
+                        <div>
+                            @Html.ActionLink(@it.BookName, "Chapters", "Book", new { id = it.BookId }, null)
+                        </div>
                     }
                 </div>
             </div>
