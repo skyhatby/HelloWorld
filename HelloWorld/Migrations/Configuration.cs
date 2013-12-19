@@ -1,4 +1,5 @@
 using System.Web.Security;
+using HelloWorld.Models;
 using WebMatrix.WebData;
 
 namespace HelloWorld.Migrations
@@ -35,6 +36,7 @@ namespace HelloWorld.Migrations
             {
                 Roles.AddUserToRole("skyhat", "Admin");
             }
+
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //

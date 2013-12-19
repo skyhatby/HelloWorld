@@ -4,40 +4,19 @@
     ViewBag.Title = "Home Page";
 }
 
-<form method="GET">
+@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "UserList"
+    }))
+{
     <input type="search" class="form-control" name="search" />
     <input type="submit" class="btn btn-default" value="@Resources.Resource.Search@Resources.Resource.Users" />
-</form>
+}
 
-
-<div class="panel-group" id="accordion">
-
-    @foreach (var item in Model)
-    {
-        if (item.Books.Count != 0)
-        {
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_@item.UserId">@Resources.Resource.User : @item.UserName
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse_@item.UserId" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div>@Resources.Resource.Books: </div>
-                    @foreach (var it in item.Books)
-                    {
-                        <div>
-                            @Html.ActionLink(@it.BookName, "Chapters", "Book", new { id = it.BookId }, null)
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-        }
-    }
-</div>
+@Html.Partial("_UserList",Model)
 
 <div id="carousel-captions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

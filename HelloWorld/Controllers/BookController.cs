@@ -25,6 +25,10 @@ namespace HelloWorld.Controllers
         public ActionResult IndexAll(string search = null)
         {
             var books = db.Books.Include(m => m.UserProfile).OrderBy(r => r.BookName).Where(r => search == null || r.BookName.StartsWith(search)).ToList();
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_TableBooks", books);
+            }
             return View(books);
         }
 

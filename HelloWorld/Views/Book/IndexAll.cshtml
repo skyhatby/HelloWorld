@@ -9,43 +9,17 @@
     <a href="~/Book/Create" class="btn btn-default">@Resources.Resource.CreateBook</a>
 </p>
 
-<form method="GET">
+@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "BookList"
+    }))
+{
     <input type="search" class="form-control" name="search" />
     <input type="submit" class="btn btn-default" value="@Resources.Resource.Search@Resources.Resource.OnBooks" />
-</form>
+}
 
-<table class=" table-hover">
-    <thead>
-        <tr>
-            <th>
-                @Resources.Resource.BookName
-            </th>
-            <th>
-                @Resources.Resource.User:
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    @foreach (var item in Model)
-    {
-        <tbody>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BookName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserProfile.UserName)
-                </td>
-                <td>
-                    @if (item.UserProfile.UserName == User.Identity.Name)
-                    {
-                        <a href="~/Book/Edit/@item.BookId" class="btn btn-warning">@Resources.Resource.Edit</a> 
-                        <a href="~/Book/Delete/@item.BookId" class="btn btn-danger">@Resources.Resource.Delete</a>
-                    }
-                    <a href="~/Book/Chapters/@item.BookId" class="btn btn-success">@Resources.Resource.Chapters</a>
-                </td>
-            </tr>
-        </tbody>
-    }
 
-</table>
+@Html.Partial("_TableBooks", Model)

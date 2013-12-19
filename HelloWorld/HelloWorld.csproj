@@ -367,6 +367,8 @@
     <Content Include="Views\User\Delete.cshtml" />
     <Content Include="Views\User\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\User\DropPassword.cshtml" />
+    <Content Include="Views\Book\_TableBooks.cshtml" />
+    <Content Include="Views\Shared\_UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

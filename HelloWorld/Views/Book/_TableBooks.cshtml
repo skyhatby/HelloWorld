@@ -1,0 +1,37 @@
+﻿@model IEnumerable<HelloWorld.Models.Book>
+
+<table class=" table-hover" id="BookList">
+    <thead>
+        <tr>
+            <th>
+                @Resources.Resource.BookName
+            </th>
+            <th>
+                @Resources.Resource.User:
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserProfile.UserName)
+                </td>
+                <td>
+                    @if (item.UserProfile.UserName == User.Identity.Name)
+                    {
+                        <a href="~/Book/Edit/@item.BookId" class="btn btn-warning">@Resources.Resource.Edit</a> 
+                        <a href="~/Book/Delete/@item.BookId" class="btn btn-danger">@Resources.Resource.Delete</a>
+                    }
+                    <a href="~/Book/Chapters/@item.BookId" class="btn btn-success">@Resources.Resource.Chapters</a>
+                </td>
+            </tr>
+        </tbody>
+    }
+
+</table>

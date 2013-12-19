@@ -8,6 +8,13 @@ namespace HelloWorld
         // Дополнительные сведения о Bundling см. по адресу http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/otf").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/jquery.unobtrusive*",
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                       "~/Scripts/jquery-{version}.js",
@@ -57,4 +64,3 @@ namespace HelloWorld
 
 
 
- 
